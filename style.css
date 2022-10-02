@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Staatliches&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+#main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*----------Content----------*/
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 200px;
+    margin-top: -40px;
+    letter-spacing: 10px;
+    text-shadow: 0 0 0 rgb(0, 0, 0);
+    animation: move 1.3s forwards ease-in-out, pulse 2s 1.4s infinite;
+}
+h2 {
+    font-size: 40px;
+    margin-top: -150px;
+    letter-spacing: 5px;
+    color: rgb(107, 107, 107);
+    opacity: 0;
+    animation: jump 0.3s 0.8s ease-in forwards;
+}
+
+h3 {
+    opacity: 0;
+    font-size: 25px;
+    margin-top: -20px;
+    color: rgb(173, 173, 173);
+    animation: apparition 1s 0.8s forwards;
+}
+
+p {
+    opacity: 0;
+    font-size: 20px;
+    margin-top: -20px;
+    animation: apparition 1s 0.9s forwards;
+}
+
+/*---------Button----------*/
+
+a {
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 10px;
+    color: black;
+    border: 2px solid black;
+    opacity: 0;
+    margin-top: 20px ;
+    border-radius: 50px;
+    padding: 10px;
+    animation: apparition 1s 1s forwards;
+    transition: 0.2s ease-in;
+    position: relative;
+}
+a:hover {
+    background-color: black;
+    color: white;
+    padding-right: 50px;
+}
+i {
+    position: absolute;
+    left: 158px;
+    top: 13px;
+    color: white;
+}
+
+/*----------Animations----------*/
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(50px);
+        letter-spacing: -50px;
+    }
+    40% {
+        letter-spacing: 30px;
+        transform: translateX(-20px);
+    }
+    60% {
+        letter-spacing: -15px;
+        transform: translateX(10px);
+    }
+    80% {
+        letter-spacing: 10px;
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+
+}
+@keyframes pulse {
+    to {
+        text-shadow: 0 0 50px rgba(0, 0, 0, 0.01);
+    }
+}
+@keyframes jump {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes apparition {
+    to {
+        opacity: 1;
+    }
+}
+
